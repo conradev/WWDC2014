@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Kramer Software Productions, LLC. All rights reserved.
 //
 
+@import CoreData;
+
 #import "CKAppDelegate.h"
 
 #import "CKStoriesViewController.h"
@@ -61,6 +63,12 @@
     hacknyStory.storyPath = @"test.md";
     [mlhStory linkToNeighbor:hacknyStory];
 
+    CKStory *hackmitStory = [CKStory insertInManagedObjectContext:_managedObjectContext];
+    hackmitStory.name = @"HackMIT Fall 2013";
+    hackmitStory.color = [UIColor blueColor];
+    hackmitStory.imagePath = @"Workflow.png";
+    [mlhStory linkToNeighbor:hackmitStory];
+
     CKStory *appStoreStory = [CKStory insertInManagedObjectContext:_managedObjectContext];
     appStoreStory.name = @"App Store";
     appStoreStory.color = [UIColor blueColor];
@@ -79,6 +87,12 @@
     workflowStory.imagePath = @"Workflow.png";
     [appStoreStory linkToNeighbor:workflowStory];
     [mhacksStory linkToNeighbor:workflowStory];
+
+    CKStory *airbnbStory = [CKStory insertInManagedObjectContext:_managedObjectContext];
+    airbnbStory.name = @"Airbnb";
+    airbnbStory.color = [UIColor blueColor];
+    airbnbStory.imagePath = @"Workflow.png";
+    [appStoreStory linkToNeighbor:airbnbStory];
 
     return YES;
 }

@@ -2,4 +2,4 @@
 
 ## Heading
 
-Hello world!
+Hello world! [This](http://google.com) is a hyperlink!

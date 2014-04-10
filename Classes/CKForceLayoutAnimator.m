@@ -12,9 +12,9 @@
 
 #import "CKQuadTree.h"
 
-static NSString * const CKQuadtreeNodeChargeTotal = @"CKQuadtreeNodeChargeTotal";
-static NSString * const CKQuadtreeNodeChargeX = @"CKQuadtreeNodeChargeX";
-static NSString * const CKQuadtreeNodeChargeY = @"CKQuadtreeNodeChargeY";
+static NSString * const CKQuadtreeNodeChargeTotal = @"charge";
+static NSString * const CKQuadtreeNodeChargeX = @"chargeX";
+static NSString * const CKQuadtreeNodeChargeY = @"chargeY";
 
 @implementation CKForceLayoutAnimator {
     CADisplayLink *_displayLink;
@@ -25,8 +25,16 @@ static NSString * const CKQuadtreeNodeChargeY = @"CKQuadtreeNodeChargeY";
     NSMapTable *_fixedNodes;    
 }
 
+#pragma mark - NSObject
+
+- (instancetype)init {
+    self = [self initWithReferenceView:nil];
+    return self;
+}
+
 - (instancetype)initWithReferenceView:(UIView *)referenceView {
     NSParameterAssert(referenceView);
+    self = [super init];
     if (self) {
         _referenceView = referenceView;
         _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(tick)];
@@ -36,7 +44,7 @@ static NSString * const CKQuadtreeNodeChargeY = @"CKQuadtreeNodeChargeY";
         _previousCenters = [NSMapTable weakToStrongObjectsMapTable];
         _fixedNodes = [NSMapTable weakToStrongObjectsMapTable];
 
-        _linkDistance = 200.0f;
+        _linkDistance = 150.0f;
         _linkStrength = 1.0f;
         _friction = 0.9f;
         _charge = -5000.0f;
@@ -56,6 +64,8 @@ static NSString * const CKQuadtreeNodeChargeY = @"CKQuadtreeNodeChargeY";
 - (void)dealloc {
     [_linesView removeFromSuperview];
 }
+
+#pragma mark - CKForceLayoutAnimator
 
 - (void)addNode:(UIView *)node {
     NSParameterAssert(node);
@@ -258,6 +268,8 @@ static NSString * const CKQuadtreeNodeChargeY = @"CKQuadtreeNodeChargeY";
         [path moveToPoint:source.center];
         [path addLineToPoint:target.center];
     }];
+
+    [_referenceView sendSubviewToBack:_linesView];
     _linesView.frame = _referenceView.bounds;
     _linesView.path = path;
 }

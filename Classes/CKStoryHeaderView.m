@@ -16,7 +16,9 @@
     __weak UILabel *_subtitleLabel;
 }
 
-- (id)initWithFrame:(CGRect)frame {
+#pragma mark - UIView
+
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         UIImageView *imageView = [[UIImageView alloc] init];
@@ -52,6 +54,8 @@
     UIBezierPath *imageMaskPath = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:0.0f endAngle:(2.0f * M_PI) clockwise:YES];
     [(CAShapeLayer *)_imageView.layer.mask setPath:imageMaskPath.CGPath];
 }
+
+#pragma mark - CKStoryHeaderView
 
 - (void)setStory:(CKStory *)story {
     _story = story;

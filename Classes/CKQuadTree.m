@@ -16,6 +16,8 @@
     NSMutableDictionary *_userInfo;
 }
 
+#pragma mark - NSObject
+
 - (instancetype)init {
     self = [self initWithBounds:CGRectNull];
     return self;
@@ -34,7 +36,7 @@
 
 - (NSString *)description {
     NSString *point = _point ? [NSString stringWithFormat:@", point: %@", NSStringFromCGPoint([_point CGPointValue])] : @"";
-    return [NSString stringWithFormat:@"<%@: %p, %@ bounds: %@%@>", NSStringFromClass([self class]), self, _userInfo[@"CKQuadtreeNodeChargeTotal"], NSStringFromCGRect(_bounds), point];
+    return [NSString stringWithFormat:@"<%@: %p, bounds: %@%@>", NSStringFromClass([self class]), self, NSStringFromCGRect(_bounds), point];
 }
 
 - (NSString *)debugDescriptionWithLevel:(NSInteger)level {
@@ -56,6 +58,8 @@
 - (NSString *)debugDescription {
     return [self debugDescriptionWithLevel:0];
 }
+
+#pragma mark - CKQuadTreeNode
 
 - (NSArray *)nodes {
     NSMutableArray *nodes = [NSMutableArray arrayWithObjects:_topRight, nil];
@@ -126,8 +130,16 @@
 
 @implementation CKQuadTree
 
+#pragma mark - NSObject
+
+- (instancetype)init {
+    self = [self initWithPoints:nil];
+    return self;
+}
+
 - (instancetype)initWithPoints:(NSArray *)points {
-    self = [self init];
+    NSParameterAssert(points);
+    self = [super init];
     if (self) {
         // Calculate the bounds
         CGFloat minX = CGFLOAT_MAX, minY = CGFLOAT_MAX;
@@ -154,6 +166,8 @@
     }
     return self;
 }
+
+#pragma mark - CKQuadTree
 
 - (void)visit:(BOOL (^)(CKQuadTreeNode *node))block {
     [_rootNode visit:block];

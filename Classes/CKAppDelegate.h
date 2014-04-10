@@ -7,7 +7,6 @@
 //
 
 @import UIKit;
-@import CoreData;
 
 @interface CKAppDelegate : UIResponder <UIApplicationDelegate>
 

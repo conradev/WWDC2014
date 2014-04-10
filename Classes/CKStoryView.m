@@ -32,7 +32,6 @@
         CKShapeView *circleView = [[CKShapeView alloc] init];
         circleView.strokeColor = [UIColor darkGrayColor];
         circleView.fillColor = [UIColor clearColor];
-        circleView.lineWidth = 10.0f;
         [self addSubview:circleView];
         _circleView = circleView;
     }
