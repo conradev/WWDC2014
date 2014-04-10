@@ -1,5 +1,5 @@
 //
-//  CKViewController.h
+//  CKStoriesViewController.h
 //  ConradWWDC
 //
 //  Created by Conrad Kramer on 4/3/14.

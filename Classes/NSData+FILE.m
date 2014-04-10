@@ -1,9 +1,9 @@
 //
 //  NSData+FILE.m
-//  Joint
+//  ConradWWDC
 //
-//  Created by Conrad Kramer on 11/3/13.
-//  Copyright (c) 2013 Kramer Software Productions, LLC. All rights reserved.
+//  Created by Conrad Kramer on 4/9/14.
+//  Copyright (c) 2014 Kramer Software Productions, LLC. All rights reserved.
 //
 
 #import "NSData+FILE.h"
