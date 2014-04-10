@@ -1,0 +1,7 @@
+[submodule "Classes/CKShapeView"]
+	path = Classes/CKShapeView
+	url = git://github.com/conradev/CKShapeView.git
+[submodule "Classes/Discount"]
+	path = Classes/Discount
+	url = https://github.com/Orc/discount.git
+    ignore = untracked

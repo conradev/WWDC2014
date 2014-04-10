@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Story" representedClassName="CKStory" syncable="YES">
+        <attribute name="colorValue" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="storyPath" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="neighbors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Story" inverseName="neighbors" inverseEntity="Story" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Story" positionX="-63" positionY="-18" width="128" height="120"/>
+    </elements>
+</model>

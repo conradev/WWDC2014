@@ -1,0 +1,613 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D005B79618F0CC7800B1D25D /* CKQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = D005B79518F0CC7800B1D25D /* CKQuadTree.m */; };
+		D0962EAC18EE63A5002400AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0962EAB18EE63A5002400AA /* Foundation.framework */; };
+		D0962EAE18EE63A5002400AA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0962EAD18EE63A5002400AA /* CoreGraphics.framework */; };
+		D0962EB018EE63A5002400AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0962EAF18EE63A5002400AA /* UIKit.framework */; };
+		D0962EF318EF2507002400AA /* CKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0962EEA18EF2507002400AA /* CKAppDelegate.m */; };
+		D0962EF518EF2507002400AA /* CKStoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0962EEE18EF2507002400AA /* CKStoriesViewController.m */; };
+		D0962EF718EF2507002400AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0962EF218EF2507002400AA /* main.m */; };
+		D0962EFC18EF254D002400AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0962EFA18EF254D002400AA /* Images.xcassets */; };
+		D0962F0118EF26A5002400AA /* CKShapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0962F0018EF26A5002400AA /* CKShapeView.m */; };
+		D0962F0418EF276B002400AA /* CKStoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0962F0318EF276B002400AA /* CKStoryView.m */; };
+		D0A7AF3418F0507B00B513CF /* CKForceLayoutAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A7AF3318F0507B00B513CF /* CKForceLayoutAnimator.m */; };
+		D0B201D718F5ABA800CCC364 /* amalloc.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B200E518F5A8D000CCC364 /* amalloc.c */; };
+		D0B201D818F5ABA800CCC364 /* basename.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B200E718F5A8D000CCC364 /* basename.c */; };
+		D0B201D918F5ABA800CCC364 /* Csio.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B200EC18F5A8D000CCC364 /* Csio.c */; };
+		D0B201DA18F5ABA800CCC364 /* css.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B200ED18F5A8D000CCC364 /* css.c */; };
+		D0B201DB18F5ABA800CCC364 /* docheader.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B200EF18F5A8D000CCC364 /* docheader.c */; };
+		D0B201DC18F5ABA800CCC364 /* dumptree.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B200F018F5A8D000CCC364 /* dumptree.c */; };
+		D0B201DD18F5ABA800CCC364 /* emmatch.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B200F118F5A8D000CCC364 /* emmatch.c */; };
+		D0B201DE18F5ABA800CCC364 /* flags.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B200F218F5A8D000CCC364 /* flags.c */; };
+		D0B201DF18F5ABA800CCC364 /* generate.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B200F318F5A8D000CCC364 /* generate.c */; };
+		D0B201E018F5ABA800CCC364 /* github_flavoured.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B200F418F5A8D000CCC364 /* github_flavoured.c */; };
+		D0B201E118F5ABA800CCC364 /* html5.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B200F518F5A8D000CCC364 /* html5.c */; };
+		D0B201E318F5ABA800CCC364 /* makepage.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B200FA18F5A8D000CCC364 /* makepage.c */; };
+		D0B201E418F5ABA800CCC364 /* markdown.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B200FE18F5A8D000CCC364 /* markdown.c */; };
+		D0B201E518F5ABA800CCC364 /* mkd2html.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B2010518F5A8D000CCC364 /* mkd2html.c */; };
+		D0B201E618F5ABA800CCC364 /* mkdio.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B2010618F5A8D000CCC364 /* mkdio.c */; };
+		D0B201E718F5ABA800CCC364 /* mktags.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B2010818F5A8D000CCC364 /* mktags.c */; };
+		D0B201E818F5ABA800CCC364 /* pgm_options.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B2010918F5A8D000CCC364 /* pgm_options.c */; };
+		D0B201E918F5ABA800CCC364 /* resource.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B2011218F5A8D000CCC364 /* resource.c */; };
+		D0B201EA18F5ABA800CCC364 /* setup.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B2011318F5A8D000CCC364 /* setup.c */; };
+		D0B201EB18F5ABA800CCC364 /* tags.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B2011418F5A8D000CCC364 /* tags.c */; };
+		D0B201EC18F5ABA800CCC364 /* theme.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B2014418F5A8D000CCC364 /* theme.c */; };
+		D0B201ED18F5ABA800CCC364 /* toc.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B2014518F5A8D000CCC364 /* toc.c */; };
+		D0B201EE18F5ABA800CCC364 /* xml.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B2014C18F5A8D000CCC364 /* xml.c */; };
+		D0B201EF18F5ABA800CCC364 /* xmlpage.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B2014D18F5A8D000CCC364 /* xmlpage.c */; };
+		D0B201F018F5ABA800CCC364 /* version.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B201AF18F5AB2A00CCC364 /* version.c */; };
+		D0B201F118F5ABD400CCC364 /* libDiscount.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B201B518F5AB7B00CCC364 /* libDiscount.a */; };
+		D0B201F718F5EA2A00CCC364 /* CKStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B201F618F5EA2A00CCC364 /* CKStoryViewController.m */; };
+		D0B201FA18F5F9BA00CCC364 /* NSData+FILE.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B201F918F5F9BA00CCC364 /* NSData+FILE.m */; };
+		D0B201FD18F5FA8900CCC364 /* ConradWWDC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0B201FB18F5FA8900CCC364 /* ConradWWDC.xcdatamodeld */; };
+		D0B2020018F5FD0D00CCC364 /* CKStory.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B201FF18F5FD0D00CCC364 /* CKStory.m */; };
+		D0B2020218F6341300CCC364 /* Stories in Resources */ = {isa = PBXBuildFile; fileRef = D0B2020118F6341300CCC364 /* Stories */; };
+		D0B2020A18F6DCCA00CCC364 /* UIWebView+Markdown.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B2020918F6DCCA00CCC364 /* UIWebView+Markdown.m */; };
+		D0B2020D18F6E0A800CCC364 /* CKStoryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B2020C18F6E0A800CCC364 /* CKStoryHeaderView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D005B79418F0CC7800B1D25D /* CKQuadTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKQuadTree.h; sourceTree = "<group>"; };
+		D005B79518F0CC7800B1D25D /* CKQuadTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKQuadTree.m; sourceTree = "<group>"; };
+		D0962EA818EE63A5002400AA /* ConradWWDC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConradWWDC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0962EAB18EE63A5002400AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D0962EAD18EE63A5002400AA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D0962EAF18EE63A5002400AA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D0962ECD18EE63A5002400AA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D0962EE918EF2507002400AA /* CKAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKAppDelegate.h; sourceTree = "<group>"; };
+		D0962EEA18EF2507002400AA /* CKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKAppDelegate.m; sourceTree = "<group>"; };
+		D0962EED18EF2507002400AA /* CKStoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKStoriesViewController.h; sourceTree = "<group>"; };
+		D0962EEE18EF2507002400AA /* CKStoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKStoriesViewController.m; sourceTree = "<group>"; };
+		D0962EF218EF2507002400AA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D0962EFA18EF254D002400AA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D0962EFB18EF254D002400AA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0962EFF18EF26A5002400AA /* CKShapeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKShapeView.h; sourceTree = "<group>"; };
+		D0962F0018EF26A5002400AA /* CKShapeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKShapeView.m; sourceTree = "<group>"; };
+		D0962F0218EF276B002400AA /* CKStoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKStoryView.h; sourceTree = "<group>"; };
+		D0962F0318EF276B002400AA /* CKStoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKStoryView.m; sourceTree = "<group>"; };
+		D0A7AF3218F0507B00B513CF /* CKForceLayoutAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKForceLayoutAnimator.h; sourceTree = "<group>"; };
+		D0A7AF3318F0507B00B513CF /* CKForceLayoutAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKForceLayoutAnimator.m; sourceTree = "<group>"; };
+		D0B200E518F5A8D000CCC364 /* amalloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = amalloc.c; sourceTree = "<group>"; };
+		D0B200E718F5A8D000CCC364 /* basename.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = basename.c; sourceTree = "<group>"; };
+		D0B200EC18F5A8D000CCC364 /* Csio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Csio.c; sourceTree = "<group>"; };
+		D0B200ED18F5A8D000CCC364 /* css.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = css.c; sourceTree = "<group>"; };
+		D0B200EF18F5A8D000CCC364 /* docheader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = docheader.c; sourceTree = "<group>"; };
+		D0B200F018F5A8D000CCC364 /* dumptree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dumptree.c; sourceTree = "<group>"; };
+		D0B200F118F5A8D000CCC364 /* emmatch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = emmatch.c; sourceTree = "<group>"; };
+		D0B200F218F5A8D000CCC364 /* flags.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = flags.c; sourceTree = "<group>"; };
+		D0B200F318F5A8D000CCC364 /* generate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = generate.c; sourceTree = "<group>"; };
+		D0B200F418F5A8D000CCC364 /* github_flavoured.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = github_flavoured.c; sourceTree = "<group>"; };
+		D0B200F518F5A8D000CCC364 /* html5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = html5.c; sourceTree = "<group>"; };
+		D0B200FA18F5A8D000CCC364 /* makepage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = makepage.c; sourceTree = "<group>"; };
+		D0B200FE18F5A8D000CCC364 /* markdown.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = markdown.c; sourceTree = "<group>"; };
+		D0B2010518F5A8D000CCC364 /* mkd2html.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mkd2html.c; sourceTree = "<group>"; };
+		D0B2010618F5A8D000CCC364 /* mkdio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mkdio.c; sourceTree = "<group>"; };
+		D0B2010818F5A8D000CCC364 /* mktags.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mktags.c; sourceTree = "<group>"; };
+		D0B2010918F5A8D000CCC364 /* pgm_options.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pgm_options.c; sourceTree = "<group>"; };
+		D0B2011218F5A8D000CCC364 /* resource.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = resource.c; sourceTree = "<group>"; };
+		D0B2011318F5A8D000CCC364 /* setup.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = setup.c; sourceTree = "<group>"; };
+		D0B2011418F5A8D000CCC364 /* tags.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tags.c; sourceTree = "<group>"; };
+		D0B2014418F5A8D000CCC364 /* theme.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = theme.c; sourceTree = "<group>"; };
+		D0B2014518F5A8D000CCC364 /* toc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = toc.c; sourceTree = "<group>"; };
+		D0B2014C18F5A8D000CCC364 /* xml.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xml.c; sourceTree = "<group>"; };
+		D0B2014D18F5A8D000CCC364 /* xmlpage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xmlpage.c; sourceTree = "<group>"; };
+		D0B201AF18F5AB2A00CCC364 /* version.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = version.c; sourceTree = "<group>"; };
+		D0B201B518F5AB7B00CCC364 /* libDiscount.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDiscount.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0B201F318F5E2A800CCC364 /* Discount.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Discount.xcconfig; path = Resources/Discount.xcconfig; sourceTree = SOURCE_ROOT; };
+		D0B201F518F5EA2A00CCC364 /* CKStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKStoryViewController.h; sourceTree = "<group>"; };
+		D0B201F618F5EA2A00CCC364 /* CKStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKStoryViewController.m; sourceTree = "<group>"; };
+		D0B201F818F5F9BA00CCC364 /* NSData+FILE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+FILE.h"; sourceTree = "<group>"; };
+		D0B201F918F5F9BA00CCC364 /* NSData+FILE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+FILE.m"; sourceTree = "<group>"; };
+		D0B201FC18F5FA8900CCC364 /* ConradWWDC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ConradWWDC.xcdatamodel; sourceTree = "<group>"; };
+		D0B201FE18F5FD0D00CCC364 /* CKStory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKStory.h; path = Classes/CKStory.h; sourceTree = SOURCE_ROOT; };
+		D0B201FF18F5FD0D00CCC364 /* CKStory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CKStory.m; path = Classes/CKStory.m; sourceTree = SOURCE_ROOT; };
+		D0B2020118F6341300CCC364 /* Stories */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Stories; sourceTree = "<group>"; };
+		D0B2020818F6DCCA00CCC364 /* UIWebView+Markdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+Markdown.h"; sourceTree = "<group>"; };
+		D0B2020918F6DCCA00CCC364 /* UIWebView+Markdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+Markdown.m"; sourceTree = "<group>"; };
+		D0B2020B18F6E0A800CCC364 /* CKStoryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKStoryHeaderView.h; sourceTree = "<group>"; };
+		D0B2020C18F6E0A800CCC364 /* CKStoryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKStoryHeaderView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0962EA518EE63A5002400AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0B201F118F5ABD400CCC364 /* libDiscount.a in Frameworks */,
+				D0962EAE18EE63A5002400AA /* CoreGraphics.framework in Frameworks */,
+				D0962EB018EE63A5002400AA /* UIKit.framework in Frameworks */,
+				D0962EAC18EE63A5002400AA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0B201B218F5AB7B00CCC364 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D0962E9F18EE63A5002400AA = {
+			isa = PBXGroup;
+			children = (
+				D0962EF818EF250B002400AA /* Classes */,
+				D0962EF918EF2524002400AA /* Resources */,
+				D0962EAA18EE63A5002400AA /* Frameworks */,
+				D0962EA918EE63A5002400AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0962EA918EE63A5002400AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0962EA818EE63A5002400AA /* ConradWWDC.app */,
+				D0B201B518F5AB7B00CCC364 /* libDiscount.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0962EAA18EE63A5002400AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0B200E418F5A8D000CCC364 /* Discount */,
+				D0962EFE18EF26A5002400AA /* CKShapeView */,
+				D0962EAB18EE63A5002400AA /* Foundation.framework */,
+				D0962EAD18EE63A5002400AA /* CoreGraphics.framework */,
+				D0962EAF18EE63A5002400AA /* UIKit.framework */,
+				D0962ECD18EE63A5002400AA /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0962EF818EF250B002400AA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D0962EE918EF2507002400AA /* CKAppDelegate.h */,
+				D0962EEA18EF2507002400AA /* CKAppDelegate.m */,
+				D0B201FE18F5FD0D00CCC364 /* CKStory.h */,
+				D0B201FF18F5FD0D00CCC364 /* CKStory.m */,
+				D0962EED18EF2507002400AA /* CKStoriesViewController.h */,
+				D0962EEE18EF2507002400AA /* CKStoriesViewController.m */,
+				D0B201F518F5EA2A00CCC364 /* CKStoryViewController.h */,
+				D0B201F618F5EA2A00CCC364 /* CKStoryViewController.m */,
+				D0B2020B18F6E0A800CCC364 /* CKStoryHeaderView.h */,
+				D0B2020C18F6E0A800CCC364 /* CKStoryHeaderView.m */,
+				D0962F0218EF276B002400AA /* CKStoryView.h */,
+				D0962F0318EF276B002400AA /* CKStoryView.m */,
+				D0A7AF3218F0507B00B513CF /* CKForceLayoutAnimator.h */,
+				D0A7AF3318F0507B00B513CF /* CKForceLayoutAnimator.m */,
+				D005B79418F0CC7800B1D25D /* CKQuadTree.h */,
+				D005B79518F0CC7800B1D25D /* CKQuadTree.m */,
+				D0B2020818F6DCCA00CCC364 /* UIWebView+Markdown.h */,
+				D0B2020918F6DCCA00CCC364 /* UIWebView+Markdown.m */,
+				D0B201F818F5F9BA00CCC364 /* NSData+FILE.h */,
+				D0B201F918F5F9BA00CCC364 /* NSData+FILE.m */,
+				D0962EF218EF2507002400AA /* main.m */,
+			);
+			path = Classes;
+			sourceTree = SOURCE_ROOT;
+		};
+		D0962EF918EF2524002400AA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D0B2020118F6341300CCC364 /* Stories */,
+				D0962EFB18EF254D002400AA /* Info.plist */,
+				D0B201FB18F5FA8900CCC364 /* ConradWWDC.xcdatamodeld */,
+				D0962EFA18EF254D002400AA /* Images.xcassets */,
+			);
+			path = Resources;
+			sourceTree = SOURCE_ROOT;
+		};
+		D0962EFE18EF26A5002400AA /* CKShapeView */ = {
+			isa = PBXGroup;
+			children = (
+				D0962EFF18EF26A5002400AA /* CKShapeView.h */,
+				D0962F0018EF26A5002400AA /* CKShapeView.m */,
+			);
+			name = CKShapeView;
+			path = Classes/CKShapeView/CKShapeView;
+			sourceTree = SOURCE_ROOT;
+		};
+		D0B200E418F5A8D000CCC364 /* Discount */ = {
+			isa = PBXGroup;
+			children = (
+				D0B201F318F5E2A800CCC364 /* Discount.xcconfig */,
+				D0B200E518F5A8D000CCC364 /* amalloc.c */,
+				D0B200E718F5A8D000CCC364 /* basename.c */,
+				D0B200EC18F5A8D000CCC364 /* Csio.c */,
+				D0B200ED18F5A8D000CCC364 /* css.c */,
+				D0B200EF18F5A8D000CCC364 /* docheader.c */,
+				D0B200F018F5A8D000CCC364 /* dumptree.c */,
+				D0B200F118F5A8D000CCC364 /* emmatch.c */,
+				D0B200F218F5A8D000CCC364 /* flags.c */,
+				D0B200F318F5A8D000CCC364 /* generate.c */,
+				D0B200F418F5A8D000CCC364 /* github_flavoured.c */,
+				D0B200F518F5A8D000CCC364 /* html5.c */,
+				D0B200FA18F5A8D000CCC364 /* makepage.c */,
+				D0B200FE18F5A8D000CCC364 /* markdown.c */,
+				D0B2010518F5A8D000CCC364 /* mkd2html.c */,
+				D0B2010618F5A8D000CCC364 /* mkdio.c */,
+				D0B2010818F5A8D000CCC364 /* mktags.c */,
+				D0B2010918F5A8D000CCC364 /* pgm_options.c */,
+				D0B2011218F5A8D000CCC364 /* resource.c */,
+				D0B2011318F5A8D000CCC364 /* setup.c */,
+				D0B2011418F5A8D000CCC364 /* tags.c */,
+				D0B2014418F5A8D000CCC364 /* theme.c */,
+				D0B2014518F5A8D000CCC364 /* toc.c */,
+				D0B2014C18F5A8D000CCC364 /* xml.c */,
+				D0B2014D18F5A8D000CCC364 /* xmlpage.c */,
+				D0B201AF18F5AB2A00CCC364 /* version.c */,
+			);
+			name = Discount;
+			path = Classes/Discount;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0962EA718EE63A5002400AA /* ConradWWDC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0962EDD18EE63A5002400AA /* Build configuration list for PBXNativeTarget "ConradWWDC" */;
+			buildPhases = (
+				D0962EA418EE63A5002400AA /* Sources */,
+				D0962EA518EE63A5002400AA /* Frameworks */,
+				D0962EA618EE63A5002400AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ConradWWDC;
+			productName = ConradWWDC;
+			productReference = D0962EA818EE63A5002400AA /* ConradWWDC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D0B201B418F5AB7B00CCC364 /* Discount */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0B201D118F5AB7B00CCC364 /* Build configuration list for PBXNativeTarget "Discount" */;
+			buildPhases = (
+				D0B201F418F5E5FD00CCC364 /* Configure Discount */,
+				D0B201F218F5AC5100CCC364 /* Configure Version Number */,
+				D0B201B118F5AB7B00CCC364 /* Sources */,
+				D0B201B218F5AB7B00CCC364 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Discount;
+			productName = Discount;
+			productReference = D0B201B518F5AB7B00CCC364 /* libDiscount.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0962EA018EE63A5002400AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CK;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Kramer Software Productions, LLC.";
+			};
+			buildConfigurationList = D0962EA318EE63A5002400AA /* Build configuration list for PBXProject "ConradWWDC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0962E9F18EE63A5002400AA;
+			productRefGroup = D0962EA918EE63A5002400AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0962EA718EE63A5002400AA /* ConradWWDC */,
+				D0B201B418F5AB7B00CCC364 /* Discount */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0962EA618EE63A5002400AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0B2020218F6341300CCC364 /* Stories in Resources */,
+				D0962EFC18EF254D002400AA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D0B201F218F5AC5100CCC364 /* Configure Version Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Configure Version Number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "DISCOUNT_VERSION=$(cat \"$SRCROOT/Classes/Discount/VERSION\")\necho \"DISCOUNT_CFLAGS = -DVERSION='\\\"${DISCOUNT_VERSION}\\\"';\" > $SRCROOT/Resources/Discount.xcconfig";
+		};
+		D0B201F418F5E5FD00CCC364 /* Configure Discount */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Configure Discount";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ ! -f \"$SRCROOT/Classes/Discount/version.c\" ]]; then\n    cd \"$SRCROOT/Classes/Discount/\"\n    /bin/bash configure.sh\n    clang mktags.c -Wno-implicit-int -o mktags\n    ./mktags > blocktags\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0962EA418EE63A5002400AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0962F0118EF26A5002400AA /* CKShapeView.m in Sources */,
+				D0B201FD18F5FA8900CCC364 /* ConradWWDC.xcdatamodeld in Sources */,
+				D0A7AF3418F0507B00B513CF /* CKForceLayoutAnimator.m in Sources */,
+				D0962EF318EF2507002400AA /* CKAppDelegate.m in Sources */,
+				D0B2020A18F6DCCA00CCC364 /* UIWebView+Markdown.m in Sources */,
+				D0B201F718F5EA2A00CCC364 /* CKStoryViewController.m in Sources */,
+				D0B2020D18F6E0A800CCC364 /* CKStoryHeaderView.m in Sources */,
+				D0B201FA18F5F9BA00CCC364 /* NSData+FILE.m in Sources */,
+				D0962EF718EF2507002400AA /* main.m in Sources */,
+				D0962F0418EF276B002400AA /* CKStoryView.m in Sources */,
+				D0B2020018F5FD0D00CCC364 /* CKStory.m in Sources */,
+				D0962EF518EF2507002400AA /* CKStoriesViewController.m in Sources */,
+				D005B79618F0CC7800B1D25D /* CKQuadTree.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0B201B118F5AB7B00CCC364 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0B201E318F5ABA800CCC364 /* makepage.c in Sources */,
+				D0B201DD18F5ABA800CCC364 /* emmatch.c in Sources */,
+				D0B201D718F5ABA800CCC364 /* amalloc.c in Sources */,
+				D0B201E918F5ABA800CCC364 /* resource.c in Sources */,
+				D0B201EF18F5ABA800CCC364 /* xmlpage.c in Sources */,
+				D0B201E518F5ABA800CCC364 /* mkd2html.c in Sources */,
+				D0B201DC18F5ABA800CCC364 /* dumptree.c in Sources */,
+				D0B201D918F5ABA800CCC364 /* Csio.c in Sources */,
+				D0B201E118F5ABA800CCC364 /* html5.c in Sources */,
+				D0B201EB18F5ABA800CCC364 /* tags.c in Sources */,
+				D0B201F018F5ABA800CCC364 /* version.c in Sources */,
+				D0B201DF18F5ABA800CCC364 /* generate.c in Sources */,
+				D0B201D818F5ABA800CCC364 /* basename.c in Sources */,
+				D0B201ED18F5ABA800CCC364 /* toc.c in Sources */,
+				D0B201E818F5ABA800CCC364 /* pgm_options.c in Sources */,
+				D0B201DE18F5ABA800CCC364 /* flags.c in Sources */,
+				D0B201EC18F5ABA800CCC364 /* theme.c in Sources */,
+				D0B201EE18F5ABA800CCC364 /* xml.c in Sources */,
+				D0B201E418F5ABA800CCC364 /* markdown.c in Sources */,
+				D0B201E618F5ABA800CCC364 /* mkdio.c in Sources */,
+				D0B201DB18F5ABA800CCC364 /* docheader.c in Sources */,
+				D0B201DA18F5ABA800CCC364 /* css.c in Sources */,
+				D0B201EA18F5ABA800CCC364 /* setup.c in Sources */,
+				D0B201E718F5ABA800CCC364 /* mktags.c in Sources */,
+				D0B201E018F5ABA800CCC364 /* github_flavoured.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D0962EDB18EE63A5002400AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D0962EDC18EE63A5002400AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0962EDE18EE63A5002400AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/Classes/CKShapeView/CKShapeView",
+					"$(SRCROOT)/Classes/Discount",
+				);
+				INFOPLIST_FILE = Resources/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D0962EDF18EE63A5002400AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/Classes/CKShapeView/CKShapeView",
+					"$(SRCROOT)/Classes/Discount",
+				);
+				INFOPLIST_FILE = Resources/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D0B201D218F5AB7B00CCC364 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B201F318F5E2A800CCC364 /* Discount.xcconfig */;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Classes/Discount",
+				);
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"$(DISCOUNT_CFLAGS)",
+					"-Wno-implicit-int",
+					"-Wno-shorten-64-to-32",
+					"-Wno-conditional-uninitialized",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D0B201D318F5AB7B00CCC364 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B201F318F5E2A800CCC364 /* Discount.xcconfig */;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Classes/Discount",
+				);
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"$(DISCOUNT_CFLAGS)",
+					"-Wno-implicit-int",
+					"-Wno-shorten-64-to-32",
+					"-Wno-conditional-uninitialized",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0962EA318EE63A5002400AA /* Build configuration list for PBXProject "ConradWWDC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0962EDB18EE63A5002400AA /* Debug */,
+				D0962EDC18EE63A5002400AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0962EDD18EE63A5002400AA /* Build configuration list for PBXNativeTarget "ConradWWDC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0962EDE18EE63A5002400AA /* Debug */,
+				D0962EDF18EE63A5002400AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0B201D118F5AB7B00CCC364 /* Build configuration list for PBXNativeTarget "Discount" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0B201D218F5AB7B00CCC364 /* Debug */,
+				D0B201D318F5AB7B00CCC364 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D0B201FB18F5FA8900CCC364 /* ConradWWDC.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D0B201FC18F5FA8900CCC364 /* ConradWWDC.xcdatamodel */,
+			);
+			currentVersion = D0B201FC18F5FA8900CCC364 /* ConradWWDC.xcdatamodel */;
+			path = ConradWWDC.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D0962EA018EE63A5002400AA /* Project object */;
+}
