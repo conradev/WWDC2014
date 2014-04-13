@@ -29,7 +29,8 @@
         _imageView = imageView;
         
         UILabel *titleLabel = [[UILabel alloc] init];
-        titleLabel.font = [UIFont boldSystemFontOfSize:36.0f];
+        titleLabel.font = [UIFont fontWithName:@"Avenir-Heavy" size:36.0f];
+        titleLabel.textColor = _story.textColor;
         titleLabel.textAlignment = NSTextAlignmentLeft;
         titleLabel.text = _story.name;
         titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
@@ -38,7 +39,7 @@
 
         NSDictionary *metrics = @{ @"margin": @15 };
         NSDictionary *views = NSDictionaryOfVariableBindings(imageView, titleLabel);
-        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(margin)-[imageView]-(30)-[titleLabel]-(margin)-|" options:0 metrics:metrics views:views]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(margin)-[imageView]-(margin)-[titleLabel]-(margin)-|" options:0 metrics:metrics views:views]];
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(margin)-[imageView]-(margin)-|" options:0 metrics:metrics views:views]];
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(margin)-[titleLabel]-(margin)-|" options:0 metrics:metrics views:views]];
         [imageView addConstraint:[NSLayoutConstraint constraintWithItem:imageView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:imageView attribute:NSLayoutAttributeWidth multiplier:1.0f constant:0.0f]];
@@ -61,6 +62,7 @@
     _story = story;
     _imageView.image = [UIImage imageNamed:_story.imagePath];
     _titleLabel.text = _story.name;
+    _titleLabel.textColor = _story.textColor;
 }
 
 @end

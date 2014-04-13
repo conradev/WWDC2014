@@ -1,4 +1,29 @@
 body {
-    font-family: "Helvetica Neue";
+    font-family: "Avenir";
     padding: 20px 20px 20px 20px;
+    -webkit-user-select: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li:before{
+    font-weight: bold;
+    content: "– ";
+    position: relative;
+    left: -5px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+video {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 225px;
+    width: 400px;
 }

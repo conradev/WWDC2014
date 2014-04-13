@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D005B79618F0CC7800B1D25D /* CKQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = D005B79518F0CC7800B1D25D /* CKQuadTree.m */; };
+		D03DC49518FA6B6A00D7E680 /* CKBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03DC49418FA6B6A00D7E680 /* CKBrowserViewController.m */; };
 		D0962EAC18EE63A5002400AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0962EAB18EE63A5002400AA /* Foundation.framework */; };
 		D0962EAE18EE63A5002400AA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0962EAD18EE63A5002400AA /* CoreGraphics.framework */; };
 		D0962EB018EE63A5002400AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0962EAF18EE63A5002400AA /* UIKit.framework */; };
@@ -56,6 +57,8 @@
 /* Begin PBXFileReference section */
 		D005B79418F0CC7800B1D25D /* CKQuadTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKQuadTree.h; sourceTree = "<group>"; };
 		D005B79518F0CC7800B1D25D /* CKQuadTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKQuadTree.m; sourceTree = "<group>"; };
+		D03DC49318FA6B6A00D7E680 /* CKBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKBrowserViewController.h; sourceTree = "<group>"; };
+		D03DC49418FA6B6A00D7E680 /* CKBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKBrowserViewController.m; sourceTree = "<group>"; };
 		D0962EA818EE63A5002400AA /* ConradWWDC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConradWWDC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0962EAB18EE63A5002400AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D0962EAD18EE63A5002400AA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -180,6 +183,8 @@
 				D0962EEE18EF2507002400AA /* CKStoriesViewController.m */,
 				D0B201F518F5EA2A00CCC364 /* CKStoryViewController.h */,
 				D0B201F618F5EA2A00CCC364 /* CKStoryViewController.m */,
+				D03DC49318FA6B6A00D7E680 /* CKBrowserViewController.h */,
+				D03DC49418FA6B6A00D7E680 /* CKBrowserViewController.m */,
 				D0B2020B18F6E0A800CCC364 /* CKStoryHeaderView.h */,
 				D0B2020C18F6E0A800CCC364 /* CKStoryHeaderView.m */,
 				D0962F0218EF276B002400AA /* CKStoryView.h */,
@@ -370,6 +375,7 @@
 				D0962F0118EF26A5002400AA /* CKShapeView.m in Sources */,
 				D0B201FD18F5FA8900CCC364 /* ConradWWDC.xcdatamodeld in Sources */,
 				D0A7AF3418F0507B00B513CF /* CKForceLayoutAnimator.m in Sources */,
+				D03DC49518FA6B6A00D7E680 /* CKBrowserViewController.m in Sources */,
 				D0962EF318EF2507002400AA /* CKAppDelegate.m in Sources */,
 				D0B2020A18F6DCCA00CCC364 /* UIWebView+Markdown.m in Sources */,
 				D0B201F718F5EA2A00CCC364 /* CKStoryViewController.m in Sources */,
@@ -502,7 +508,9 @@
 					"$(SRCROOT)/Classes/Discount",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -519,7 +527,9 @@
 					"$(SRCROOT)/Classes/Discount",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

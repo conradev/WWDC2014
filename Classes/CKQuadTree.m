@@ -141,7 +141,6 @@
     NSParameterAssert(points);
     self = [super init];
     if (self) {
-        // Calculate the bounds
         CGFloat minX = CGFLOAT_MAX, minY = CGFLOAT_MAX;
         CGFloat maxX = CGFLOAT_MIN, maxY = CGFLOAT_MIN;
         for (NSValue *value in points) {
@@ -156,11 +155,9 @@
                 minY = point.y;
         }
 
-        // Squarify the bounds
         CGFloat size = ceil(MAX(maxX - minX, maxY - minY) + 1);
         _rootNode = [[CKQuadTreeNode alloc] initWithBounds:CGRectMake(floor(minX), floor(minY), size, size)];
 
-        // Fill the tree
         for (NSValue *value in points)
             [_rootNode insertPoint:[value CGPointValue]];
     }

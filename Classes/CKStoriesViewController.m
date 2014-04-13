@@ -51,17 +51,6 @@
     }
 }
 
-- (void)viewDidLayoutSubviews {
-    CKStoryView *headView = [[_animator.nodes objectsPassingTest:^BOOL(CKStoryView *storyView, BOOL *stop) {
-        return [storyView.story.name isEqualToString:@"Me"];
-    }] anyObject];
-    headView.center = CGPointMake(CGRectGetMidX(_animator.referenceView.bounds), CGRectGetMidY(_animator.referenceView.bounds));
-    for (UIGestureRecognizer *recognizer in headView.gestureRecognizers)
-        [headView removeGestureRecognizer:recognizer];
-
-    [_animator fixNode:headView atPosition:headView.center];
-}
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
@@ -72,6 +61,12 @@
     [super viewDidDisappear:animated];
 
     [_animator stop];
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+
+    _animator.alpha = 0.1f;
 }
 
 #pragma mark - CKMainViewController
@@ -88,14 +83,14 @@
         [UIView addKeyframeWithRelativeStartTime:0.8f relativeDuration:0.2f animations:^{
             storyView.transform = CGAffineTransformIdentity;
         }];
-    } completion:^(BOOL finished) {
-        if (storyView.story.storyPath) {
-            CKStoryViewController *storyViewController = [[CKStoryViewController alloc] init];
-            storyViewController.modalPresentationStyle = UIModalPresentationFormSheet;
-            storyViewController.story = storyView.story;
-            [self presentViewController:storyViewController animated:YES completion:nil];
-        }
-    }];
+    } completion:nil];
+
+    if (storyView.story.storyPath) {
+        CKStoryViewController *storyViewController = [[CKStoryViewController alloc] init];
+        storyViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+        storyViewController.story = storyView.story;
+        [self presentViewController:storyViewController animated:YES completion:nil];
+    }
 }
 
 - (void)pan:(UIPanGestureRecognizer *)recognizer {

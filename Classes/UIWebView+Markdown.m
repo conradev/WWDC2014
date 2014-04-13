@@ -18,6 +18,8 @@
 - (void)loadMarkdownFile:(NSString *)fileName {
     NSURL *storiesURL = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"Stories"];
     NSURL *infoURL = [storiesURL URLByAppendingPathComponent:fileName];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:infoURL.path])
+        return;
     FILE *infoFile = fopen([infoURL fileSystemRepresentation], "r");
     MMIOT *document = mkd_in(infoFile, 0);
     NSMutableData *htmlData = [NSMutableData data];
