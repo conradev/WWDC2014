@@ -8,11 +8,6 @@
 
 #import "CKStory.h"
 
-@interface CKStory ()
-@property (strong, nonatomic) NSNumber *colorValue;
-@property (strong, nonatomic) NSNumber *textColorValue;
-@end
-
 @interface CKStory (CoreData)
 - (void)addNeighborsObject:(CKStory *)story;
 - (void)removeNeighborsObject:(CKStory *)story;

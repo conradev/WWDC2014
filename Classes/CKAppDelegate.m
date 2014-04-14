@@ -32,15 +32,13 @@
 
     CKStory *headStory = [CKStory insertInManagedObjectContext:_managedObjectContext];
     headStory.name = @"Conrad Kramer";
-    headStory.color = [UIColor colorWithRed:0.2f green:0.6f blue:0.8f alpha:1.0f];
+    headStory.color = [UIColor colorWithRed:0.0f green:0.67f blue:0.0f alpha:1.0f];
     headStory.textColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f];
     headStory.imagePath = @"Me.png";
     headStory.storyPath = @"Me.md";
 
     CKStory *mlhStory = [CKStory insertInManagedObjectContext:_managedObjectContext];
-    mlhStory.name = @"Major League Hacking";
     mlhStory.color = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f];
-    mlhStory.textColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f];
     mlhStory.imagePath = @"MLH.png";
     [headStory linkToNeighbor:mlhStory];
 
@@ -77,7 +75,6 @@
     [mlhStory linkToNeighbor:hackmitStory];
 
     CKStory *appStoreStory = [CKStory insertInManagedObjectContext:_managedObjectContext];
-    appStoreStory.name = @"App Store";
     appStoreStory.color = [UIColor blueColor];
     appStoreStory.imagePath = @"AppStore.png";
     [headStory linkToNeighbor:appStoreStory];

@@ -10,7 +10,6 @@
 
 @interface CKDataStreamContext : NSObject
 
-@property (readonly, strong, nonatomic) NSUUID *uuid;
 @property (readonly, strong, nonatomic) NSData *data;
 @property (nonatomic) fpos_t pos;
 
@@ -26,7 +25,6 @@
     NSParameterAssert(data);
     self = [super init];
     if (self) {
-        _uuid = [NSUUID UUID];
         _data = data;
     }
     return self;
@@ -34,7 +32,7 @@
 
 @end
 
-static NSMutableDictionary *contexts = nil;
+static NSMutableSet *contexts = nil;
 
 static int readfn(void *cookie, char *ptr, int size) {
     CKDataStreamContext *context = (__bridge CKDataStreamContext *)cookie;
@@ -68,16 +66,15 @@ static fpos_t seekfn(void *cookie, fpos_t offset, int whence) {
 }
 
 static int closefn(void *cookie) {
-    CKDataStreamContext *context = (__bridge CKDataStreamContext *)cookie;
-    [contexts removeObjectForKey:context.uuid];
+    [contexts removeObject:(__bridge CKDataStreamContext *)cookie];
     return 0;
 }
 
 FILE * CKOpenData(NSData *data) {
     static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{ contexts = [[NSMutableDictionary alloc] init]; });
+    dispatch_once(&onceToken, ^{ contexts = [[NSMutableSet alloc] init]; });
     NSCParameterAssert(data);
     CKDataStreamContext *context = [CKDataStreamContext contextWithData:data];
-    [contexts setObject:context forKey:context.uuid];
+    [contexts addObject:context];
     return funopen((__bridge void *)context, readfn, [data isKindOfClass:[NSMutableData class]] ? writefn : NULL, seekfn, closefn);
 }

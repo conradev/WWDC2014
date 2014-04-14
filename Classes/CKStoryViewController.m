@@ -7,14 +7,15 @@
 //
 
 #import <objc/runtime.h>
+#import <stdio.h>
+#import <mkdio.h>
 
 #import "CKStoryViewController.h"
 
 #import "CKStory.h"
 #import "CKStoryHeaderView.h"
 #import "CKBrowserViewController.h"
-
-#import "UIWebView+Markdown.h"
+#import "NSData+FILE.h"
 
 @interface CKStoryViewController () <UIWebViewDelegate, UIAlertViewDelegate>
 @end
@@ -45,7 +46,6 @@
     webView.translatesAutoresizingMaskIntoConstraints = NO;
     webView.backgroundColor = [UIColor whiteColor];
     webView.delegate = self;
-    [webView loadMarkdownFile:_story.storyPath];
     [self.view addSubview:webView];
     _webView = webView;
 
@@ -53,6 +53,12 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[headerView(120)][webView]|" options:0 metrics:nil views:views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[headerView]|" options:0 metrics:nil views:views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[webView]|" options:0 metrics:nil views:views]];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    [self loadWebView];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -78,7 +84,27 @@
     _story = story;
 
     _headerView.story = _story;
-    [_webView loadMarkdownFile:_story.storyPath];
+    [self loadWebView];
+}
+
+- (void)loadWebView {
+    NSURL *storiesURL = [[[NSBundle mainBundle] resourceURL] URLByAppendingPathComponent:@"Stories"];
+    NSURL *url = [storiesURL URLByAppendingPathComponent:_story.storyPath];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:url.path])
+        return;
+    NSMutableData *data = [NSMutableData data];
+    FILE *input = fopen([url fileSystemRepresentation], "r");
+    FILE *output = CKOpenData(data);
+    MMIOT *document = mkd_in(input, 0);
+    markdown(document, output, 0);
+    mkd_cleanup(document);
+    fclose(input);
+    fclose(output);
+    UInt32 color = ((_story.colorValue.integerValue & 0xFFFFFF00) >> 8);
+    NSString *css = [NSString stringWithFormat:@"<link href=\"story.css\" type=\"text/css\" rel=\"stylesheet\"></link><style type=\"text/css\">a {color:#%06x;}</style>", color];
+    NSString *body = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSString *html = [NSString stringWithFormat:@"<html><head>%@</head><body>%@</body></html>", css, body];
+    [_webView loadHTMLString:html baseURL:storiesURL];
 }
 
 #pragma mark - UIWebViewDelegate
@@ -98,7 +124,11 @@
         return NO;
     }
 
-    return YES;
+    [self dismissViewControllerAnimated:YES completion:^{
+        [[UIApplication sharedApplication] openURL:request.URL];
+    }];
+
+    return NO;
 }
 
 @end

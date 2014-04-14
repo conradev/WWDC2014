@@ -50,7 +50,6 @@
 		D0B201FD18F5FA8900CCC364 /* ConradWWDC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0B201FB18F5FA8900CCC364 /* ConradWWDC.xcdatamodeld */; };
 		D0B2020018F5FD0D00CCC364 /* CKStory.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B201FF18F5FD0D00CCC364 /* CKStory.m */; };
 		D0B2020218F6341300CCC364 /* Stories in Resources */ = {isa = PBXBuildFile; fileRef = D0B2020118F6341300CCC364 /* Stories */; };
-		D0B2020A18F6DCCA00CCC364 /* UIWebView+Markdown.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B2020918F6DCCA00CCC364 /* UIWebView+Markdown.m */; };
 		D0B2020D18F6E0A800CCC364 /* CKStoryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B2020C18F6E0A800CCC364 /* CKStoryHeaderView.m */; };
 /* End PBXBuildFile section */
 
@@ -112,8 +111,6 @@
 		D0B201FE18F5FD0D00CCC364 /* CKStory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKStory.h; path = Classes/CKStory.h; sourceTree = SOURCE_ROOT; };
 		D0B201FF18F5FD0D00CCC364 /* CKStory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CKStory.m; path = Classes/CKStory.m; sourceTree = SOURCE_ROOT; };
 		D0B2020118F6341300CCC364 /* Stories */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Stories; sourceTree = "<group>"; };
-		D0B2020818F6DCCA00CCC364 /* UIWebView+Markdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+Markdown.h"; sourceTree = "<group>"; };
-		D0B2020918F6DCCA00CCC364 /* UIWebView+Markdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+Markdown.m"; sourceTree = "<group>"; };
 		D0B2020B18F6E0A800CCC364 /* CKStoryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKStoryHeaderView.h; sourceTree = "<group>"; };
 		D0B2020C18F6E0A800CCC364 /* CKStoryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKStoryHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,8 +190,6 @@
 				D0A7AF3318F0507B00B513CF /* CKForceLayoutAnimator.m */,
 				D005B79418F0CC7800B1D25D /* CKQuadTree.h */,
 				D005B79518F0CC7800B1D25D /* CKQuadTree.m */,
-				D0B2020818F6DCCA00CCC364 /* UIWebView+Markdown.h */,
-				D0B2020918F6DCCA00CCC364 /* UIWebView+Markdown.m */,
 				D0B201F818F5F9BA00CCC364 /* NSData+FILE.h */,
 				D0B201F918F5F9BA00CCC364 /* NSData+FILE.m */,
 				D0962EF218EF2507002400AA /* main.m */,
@@ -377,7 +372,6 @@
 				D0A7AF3418F0507B00B513CF /* CKForceLayoutAnimator.m in Sources */,
 				D03DC49518FA6B6A00D7E680 /* CKBrowserViewController.m in Sources */,
 				D0962EF318EF2507002400AA /* CKAppDelegate.m in Sources */,
-				D0B2020A18F6DCCA00CCC364 /* UIWebView+Markdown.m in Sources */,
 				D0B201F718F5EA2A00CCC364 /* CKStoryViewController.m in Sources */,
 				D0B2020D18F6E0A800CCC364 /* CKStoryHeaderView.m in Sources */,
 				D0B201FA18F5F9BA00CCC364 /* NSData+FILE.m in Sources */,
@@ -499,7 +493,7 @@
 		D0962EDE18EE63A5002400AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Icon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -518,7 +512,7 @@
 		D0962EDF18EE63A5002400AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Icon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
