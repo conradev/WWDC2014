@@ -30,7 +30,9 @@
     NSArray *stories = [_managedObjectContext executeFetchRequest:request error:nil];
     NSMapTable *storyViews = [NSMapTable weakToWeakObjectsMapTable];
     for (CKStory *story in stories) {
-        CKStoryView *storyView = [[CKStoryView alloc] initWithFrame:CGRectMake(arc4random_uniform(CGRectGetWidth(self.view.bounds)), arc4random_uniform(CGRectGetHeight(self.view.bounds)), 100.0f, 100.0f)];
+        CKStoryView *storyView = [[CKStoryView alloc] init];
+        storyView.bounds = (CGRect){ CGPointZero, CGSizeMake(100.0f, 100.0f) };
+        storyView.center = CGPointMake(arc4random_uniform(CGRectGetWidth(self.view.bounds)), arc4random_uniform(CGRectGetHeight(self.view.bounds)) + CGRectGetHeight(self.view.bounds));
         storyView.story = story;
         [self.view addSubview:storyView];
         [_animator addNode:storyView];
@@ -49,12 +51,17 @@
             [_animator linkNode:storyView toNode:neighborView];
         }
     }
+
+    _animator.alpha = 0.25f;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 
-    [_animator start];
+    float delay = (_animator.alpha == 0.25f) ? 0.5 : 0.0f;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [_animator start];
+    });
 }
 
 - (void)viewDidDisappear:(BOOL)animated {

@@ -50,6 +50,14 @@
     pennAppsStory.storyPath = @"PennApps.md";
     [mlhStory linkToNeighbor:pennAppsStory];
 
+    CKStory *pennAppsSpringStory = [CKStory insertInManagedObjectContext:_managedObjectContext];
+    pennAppsSpringStory.name = @"PennApps Spring 2014";
+    pennAppsSpringStory.color = [UIColor colorWithRed:1.0f green:0.33f blue:0.42f alpha:1.0f];
+    pennAppsSpringStory.textColor = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f];
+    pennAppsSpringStory.imagePath = @"PennApps.png";
+    pennAppsSpringStory.storyPath = @"PennAppsSpring.md";
+    [mlhStory linkToNeighbor:pennAppsSpringStory];
+
     CKStory *mhacksStory = [CKStory insertInManagedObjectContext:_managedObjectContext];
     mhacksStory.name = @"MHacks III";
     mhacksStory.color = [UIColor colorWithRed:1.0f green:0.78f blue:0.19f alpha:1.0f];
@@ -89,7 +97,7 @@
 
     CKStory *workflowStory = [CKStory insertInManagedObjectContext:_managedObjectContext];
     workflowStory.name = @"Workflow";
-    workflowStory.color = [UIColor colorWithRed:0.412f green:0.580f blue:0.910f alpha:1.0f];
+    workflowStory.color = [UIColor colorWithRed:0.41f green:0.58f blue:0.91f alpha:1.0f];
     workflowStory.textColor = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f];
     workflowStory.imagePath = @"Workflow.png";
     workflowStory.storyPath = @"Workflow.md";
@@ -103,6 +111,12 @@
     airbnbStory.imagePath = @"Airbnb.png";
     airbnbStory.storyPath = @"Airbnb.md";
     [appStoreStory linkToNeighbor:airbnbStory];
+
+//    CKStory *cydiaStory = [CKStory insertInManagedObjectContext:_managedObjectContext];
+//    cydiaStory.name = @"Cydia";
+//    cydiaStory.color = [UIColor colorWithRed:0.36f green:0.18f blue:0.13f alpha:1.0f];
+//    cydiaStory.imagePath = @"Cydia.png";
+//    [headStory linkToNeighbor:cydiaStory];
 
     return YES;
 }

@@ -13,7 +13,7 @@
 @interface CKForceLayoutAnimator : NSObject
 
 @property (readonly, strong, nonatomic) UIView *referenceView;
-@property (readonly, weak, nonatomic) CKShapeView *linesView;
+@property (readonly, strong, nonatomic) CKShapeView *linesView;
 @property (readonly, strong, nonatomic) NSSet *nodes;
 @property (readonly, strong, nonatomic) NSSet *links;
 

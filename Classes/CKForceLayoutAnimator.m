@@ -52,17 +52,11 @@ static NSString * const CKQuadtreeNodeChargeY = @"chargeY";
         _theta = 0.8f;
         _gravity = 0.1f;
 
-        CKShapeView *linesView = [[CKShapeView alloc] init];
-        linesView.strokeColor = [UIColor grayColor];
-        linesView.fillColor = [UIColor clearColor];
-        [referenceView addSubview:linesView];
-        _linesView = linesView;
+        _linesView = [[CKShapeView alloc] init];
+        _linesView.strokeColor = [UIColor grayColor];
+        _linesView.fillColor = [UIColor clearColor];
     }
     return self;
-}
-
-- (void)dealloc {
-    [_linesView removeFromSuperview];
 }
 
 #pragma mark - CKForceLayoutAnimator
@@ -130,13 +124,15 @@ static NSString * const CKQuadtreeNodeChargeY = @"chargeY";
         [_previousCenters setObject:[NSValue valueWithCGPoint:node.center] forKey:node];
     }];
 
-    _alpha = 0.1f;
+    _alpha = MAX(0.1f, _alpha);
+    [_referenceView addSubview:_linesView];
     [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 - (void)stop {
     _alpha = 0.0f;
     [_displayLink invalidate];
+    [_linesView removeFromSuperview];
 }
 
 - (void)tick {
