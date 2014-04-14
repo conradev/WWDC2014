@@ -101,7 +101,7 @@
     fclose(input);
     fclose(output);
     UInt32 color = ((_story.colorValue.integerValue & 0xFFFFFF00) >> 8);
-    NSString *css = [NSString stringWithFormat:@"<link href=\"story.css\" type=\"text/css\" rel=\"stylesheet\"></link><style type=\"text/css\">a {color:#%06x;}</style>", color];
+    NSString *css = [NSString stringWithFormat:@"<link href=\"story.css\" type=\"text/css\" rel=\"stylesheet\"></link><style type=\"text/css\">a {color:#%06x;}</style>", (unsigned int)color];
     NSString *body = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSString *html = [NSString stringWithFormat:@"<html><head>%@</head><body>%@</body></html>", css, body];
     [_webView loadHTMLString:html baseURL:storiesURL];
