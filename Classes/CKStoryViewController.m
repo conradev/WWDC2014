@@ -17,7 +17,7 @@
 #import "CKBrowserViewController.h"
 #import "NSData+FILE.h"
 
-@interface CKStoryViewController () <UIWebViewDelegate, UIAlertViewDelegate>
+@interface CKStoryViewController () <UIWebViewDelegate>
 @end
 
 @implementation CKStoryViewController {

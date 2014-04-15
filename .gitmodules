@@ -4,4 +4,4 @@
 [submodule "Classes/Discount"]
 	path = Classes/Discount
 	url = https://github.com/Orc/discount.git
-    ignore = untracked
+	ignore = untracked
