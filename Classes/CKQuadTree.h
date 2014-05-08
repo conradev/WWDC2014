@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Kramer Software Productions, LLC. All rights reserved.
 //
 
-@import Foundation;
 @import UIKit;
 
 @interface CKQuadTreeNode : NSObject

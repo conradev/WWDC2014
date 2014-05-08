@@ -8,12 +8,9 @@
 
 @import UIKit;
 
-@class CKShapeView;
-
 @interface CKForceLayoutAnimator : NSObject
 
 @property (readonly, strong, nonatomic) UIView *referenceView;
-@property (readonly, strong, nonatomic) CKShapeView *linesView;
 @property (readonly, strong, nonatomic) NSSet *nodes;
 @property (readonly, strong, nonatomic) NSSet *links;
 
@@ -25,6 +22,9 @@
 @property (nonatomic) CGFloat theta;
 @property (nonatomic) CGFloat gravity;
 @property (nonatomic) CGFloat alpha;
+
+@property (copy, nonatomic) UIColor *lineColor;
+@property (nonatomic) CGFloat lineWidth;
 
 - (instancetype)initWithReferenceView:(UIView *)referenceView;
 

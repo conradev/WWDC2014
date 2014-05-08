@@ -8,10 +8,12 @@
 
 @import UIKit;
 
-@class CKStory;
-
 @interface CKStoryView : UIView
 
-@property (weak, nonatomic) CKStory *story;
+@property (weak, nonatomic) UILabel *titleLabel;
+
+@property (weak, nonatomic) UIWebView *webView;
+
+@property (nonatomic) CGFloat radius;
 
 @end

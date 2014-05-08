@@ -6,47 +6,25 @@
 //  Copyright (c) 2014 Kramer Software Productions, LLC. All rights reserved.
 //
 
-#import <CKShapeView.h>
-
 #import "CKStoryView.h"
 
-#import "CKStory.h"
-
-@implementation CKStoryView {
-    __weak UIView *_maskView;
-    __weak UIImageView *_imageView;
-    __weak CKShapeView *_circleView;
-    __weak CKShapeView *_glowView;
-}
-
-#pragma mark - UIView
+@implementation CKStoryView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor whiteColor];
 
-        UIView *maskView = [[UIView alloc] init];
-        maskView.backgroundColor = [UIColor whiteColor];
-        maskView.layer.mask = [CAShapeLayer layer];
-        [self addSubview:maskView];
-        _maskView = maskView;
+        UILabel *titleLabel = [[UILabel alloc] init];
+        titleLabel.font = [UIFont fontWithName:@"Avenir-Heavy" size:36.0f];
+        titleLabel.textAlignment = NSTextAlignmentLeft;
+        [self addSubview:titleLabel];
+        _titleLabel = titleLabel;
 
-        UIImageView *imageView = [[UIImageView alloc] init];
-        [maskView addSubview:imageView];
-        _imageView = imageView;
-
-        CKShapeView *circleView = [[CKShapeView alloc] init];
-        circleView.strokeColor = [UIColor darkGrayColor];
-        circleView.fillColor = [UIColor clearColor];
-        [self addSubview:circleView];
-        _circleView = circleView;
-
-        CKShapeView *glowView = [[CKShapeView alloc] init];
-        glowView.strokeColor = [UIColor blueColor];
-        glowView.fillColor = [UIColor clearColor];
-        [self addSubview:glowView];
-        _glowView = glowView;
+        UIWebView *webView = [[UIWebView alloc] init];
+        webView.backgroundColor = [UIColor whiteColor];
+        [self addSubview:webView];
+        _webView = webView;
     }
     return self;
 }
@@ -54,23 +32,15 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
 
-    CGPoint center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
-    CGFloat radius = (MIN(CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds)) / 2.0f);
-    _circleView.path = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:0.0f endAngle:(2.0f * M_PI) clockwise:YES];
-    [(CAShapeLayer *)_maskView.layer.mask setPath:_circleView.path.CGPath];
+    CGRect imageFrame, labelFrame, webFrame;
+    CGRectDivide(self.bounds, &imageFrame, &webFrame, 120.0f, CGRectMinYEdge);
+    CGRectDivide(imageFrame, &imageFrame, &labelFrame, 120.0f, CGRectMinXEdge);
+    imageFrame = UIEdgeInsetsInsetRect(imageFrame, UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f));
+    _titleLabel.frame = labelFrame;
+    _webView.frame = webFrame;
 
-    _maskView.frame = self.bounds;
-    _circleView.frame = self.bounds;
-    _imageView.frame = _maskView.bounds;
-}
-
-#pragma mark - CKStoryView
-
-- (void)setStory:(CKStory *)story {
-    _story = story;
-
-    _maskView.backgroundColor = _story.color;
-    _imageView.image = [UIImage imageNamed:story.imagePath];
+    CGPoint imageCenter = CGPointMake(CGRectGetMidX(imageFrame), CGRectGetMidY(imageFrame));
+    self.layer.anchorPoint = CGPointMake(imageCenter.x / CGRectGetWidth(self.bounds), imageCenter.y / CGRectGetHeight(self.bounds));
 }
 
 @end

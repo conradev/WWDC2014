@@ -8,10 +8,18 @@
 
 @import UIKit;
 
+#import "CKStoryView.h"
+
 @class CKStory;
 
 @interface CKStoryViewController : UIViewController
 
 @property (strong, nonatomic) CKStory *story;
+
+@property (strong, nonatomic) CKStoryView *view;
+
+- (void)loadWebView;
+
+- (void)resetWebView;
 
 @end

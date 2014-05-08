@@ -5,3 +5,6 @@
 	path = Classes/Discount
 	url = https://github.com/Orc/discount.git
 	ignore = untracked
+[submodule "Classes/pop"]
+	path = Classes/pop
+	url = https://github.com/facebook/pop.git

@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSNumber *textColorValue;
 @property (strong, nonatomic) NSString *storyPath;
 @property (strong, nonatomic) NSString *imagePath;
+
 @property (strong, nonatomic) NSSet *neighbors;
 
 + (NSString *)entityName;

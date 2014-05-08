@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Kramer Software Productions, LLC. All rights reserved.
 //
 
-#import <CKShapeView.h>
-
 #import "CKForceLayoutAnimator.h"
 
 #import "CKQuadTree.h"
@@ -22,7 +20,8 @@ static NSString * const CKQuadtreeNodeChargeY = @"chargeY";
     NSMutableSet *_links;
     NSMapTable *_weights;
     NSMapTable *_previousCenters;
-    NSMapTable *_fixedNodes;    
+    NSMapTable *_fixedNodes;
+    CAShapeLayer *_linesLayer;
 }
 
 #pragma mark - NSObject
@@ -52,14 +51,30 @@ static NSString * const CKQuadtreeNodeChargeY = @"chargeY";
         _theta = 0.8f;
         _gravity = 0.1f;
 
-        _linesView = [[CKShapeView alloc] init];
-        _linesView.strokeColor = [UIColor grayColor];
-        _linesView.fillColor = [UIColor clearColor];
+        _linesLayer = [CAShapeLayer layer];
+        _linesLayer.strokeColor = [[UIColor grayColor] CGColor];
+        _linesLayer.fillColor = [[UIColor clearColor] CGColor];
     }
     return self;
 }
 
 #pragma mark - CKForceLayoutAnimator
+
+- (void)setLineColor:(UIColor *)lineColor {
+    _linesLayer.strokeColor = [lineColor CGColor];
+}
+
+- (UIColor *)lineColor {
+    return [UIColor colorWithCGColor:_linesLayer.strokeColor];
+}
+
+- (CGFloat)lineWidth {
+    return _linesLayer.lineWidth;
+}
+
+- (void)setLineWidth:(CGFloat)lineWidth {
+    _linesLayer.lineWidth = lineWidth;
+}
 
 - (void)addNode:(UIView *)node {
     NSParameterAssert(node);
@@ -125,14 +140,14 @@ static NSString * const CKQuadtreeNodeChargeY = @"chargeY";
     }];
 
     _alpha = MAX(0.1f, _alpha);
-    [_referenceView addSubview:_linesView];
+    [_referenceView.layer insertSublayer:_linesLayer atIndex:0];
     [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 - (void)stop {
     _alpha = 0.0f;
     [_displayLink invalidate];
-    [_linesView removeFromSuperview];
+    [_linesLayer removeFromSuperlayer];
 }
 
 - (void)tick {
@@ -255,19 +270,19 @@ static NSString * const CKQuadtreeNodeChargeY = @"chargeY";
         [_previousCenters setObject:[NSValue valueWithCGPoint:center] forKey:node];
     }];
 
+
     // Draw links
-    UIBezierPath *path = [UIBezierPath bezierPath];
+    CGMutablePathRef path = CGPathCreateMutable();
     [_links enumerateObjectsUsingBlock:^(NSSet *link, BOOL *stop) {
         NSArray *linkArray = link.allObjects;
         UIView *source = linkArray.firstObject;
         UIView *target = linkArray.lastObject;
-        [path moveToPoint:source.center];
-        [path addLineToPoint:target.center];
+        CGPathMoveToPoint(path, NULL, source.center.x, source.center.y);
+        CGPathAddLineToPoint(path, NULL, target.center.x, target.center.y);
     }];
 
-    [_referenceView sendSubviewToBack:_linesView];
-    _linesView.frame = _referenceView.bounds;
-    _linesView.path = path;
+    _linesLayer.path = path;
+    CGPathRelease(path);
 }
 
 @end

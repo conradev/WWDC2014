@@ -11,80 +11,33 @@
 #import <mkdio.h>
 
 #import "CKStoryViewController.h"
-
 #import "CKStory.h"
-#import "CKStoryHeaderView.h"
 #import "CKBrowserViewController.h"
 #import "NSData+FILE.h"
 
 @interface CKStoryViewController () <UIWebViewDelegate>
 @end
 
-@implementation CKStoryViewController {
-    __weak CKStoryHeaderView *_headerView;
-    __weak UIWebView *_webView;
-    __weak UITapGestureRecognizer *_tapRecognizer;
-}
+@implementation CKStoryViewController
 
 #pragma mark - UIViewController
 
-- (void)dealloc {
-    [_tapRecognizer.view removeGestureRecognizer:_tapRecognizer];
-}
-
 - (void)loadView {
-    [super loadView];
-
-    CKStoryHeaderView *headerView = [[CKStoryHeaderView alloc] init];
-    headerView.translatesAutoresizingMaskIntoConstraints = NO;
-    headerView.story = _story;
-    headerView.backgroundColor = _story.color;
-    [self.view addSubview:headerView];
-    _headerView = headerView;
-
-    UIWebView *webView = [[UIWebView alloc] init];
-    webView.translatesAutoresizingMaskIntoConstraints = NO;
-    webView.backgroundColor = [UIColor whiteColor];
-    webView.delegate = self;
-    [self.view addSubview:webView];
-    _webView = webView;
-
-    NSDictionary *views = NSDictionaryOfVariableBindings(headerView, webView);
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[headerView(120)][webView]|" options:0 metrics:nil views:views]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[headerView]|" options:0 metrics:nil views:views]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[webView]|" options:0 metrics:nil views:views]];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    [self loadWebView];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-
-    if (_tapRecognizer == nil) {
-        UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
-        tapRecognizer.cancelsTouchesInView = NO;
-        [self.view.window addGestureRecognizer:tapRecognizer];
-        _tapRecognizer = tapRecognizer;
-    }
+    self.view = [[CKStoryView alloc] init];
+    self.view.webView.delegate = self;
+    self.view.titleLabel.text = _story.name;
+    self.view.titleLabel.textColor = _story.textColor;
+    self.view.backgroundColor = _story.color;
 }
 
 #pragma mark - CKStoryViewController
 
-- (void)tap:(UITapGestureRecognizer *)tapRecognizer {
-    if (![self.view pointInside:[tapRecognizer locationInView:self.view] withEvent:nil]) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
-}
-
 - (void)setStory:(CKStory *)story {
     _story = story;
 
-    _headerView.story = _story;
-    [self loadWebView];
+    self.view.titleLabel.text = _story.name;
+    self.view.titleLabel.textColor = _story.textColor;
+    self.view.backgroundColor = _story.color;
 }
 
 - (void)loadWebView {
@@ -104,7 +57,11 @@
     NSString *css = [NSString stringWithFormat:@"<link href=\"story.css\" type=\"text/css\" rel=\"stylesheet\"></link><style type=\"text/css\">a {color:#%06x;}</style>", (unsigned int)color];
     NSString *body = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSString *html = [NSString stringWithFormat:@"<html><head>%@</head><body>%@</body></html>", css, body];
-    [_webView loadHTMLString:html baseURL:storiesURL];
+    [self.view.webView loadHTMLString:html baseURL:storiesURL];
+}
+
+- (void)resetWebView {
+    [self.view.webView loadHTMLString:@"" baseURL:nil];
 }
 
 #pragma mark - UIWebViewDelegate
@@ -124,9 +81,7 @@
         return NO;
     }
 
-    [self dismissViewControllerAnimated:YES completion:^{
-        [[UIApplication sharedApplication] openURL:request.URL];
-    }];
+    [[UIApplication sharedApplication] openURL:request.URL];
 
     return NO;
 }

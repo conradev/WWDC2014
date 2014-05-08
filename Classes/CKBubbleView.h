@@ -1,5 +1,5 @@
 //
-//  CKStoryHeaderView.h
+//  CKBubbleView.h
 //  ConradWWDC
 //
 //  Created by Conrad Kramer on 4/3/14.
@@ -8,10 +8,10 @@
 
 @import UIKit;
 
-@class CKStory;
+@interface CKBubbleView : UIView
 
-@interface CKStoryHeaderView : UIView
+@property (weak, nonatomic) UIImageView *imageView;
 
-@property (weak, nonatomic) CKStory *story;
+@property (weak, nonatomic) CAShapeLayer *outlineLayer;
 
 @end

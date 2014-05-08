@@ -8,16 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		D005B79618F0CC7800B1D25D /* CKQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = D005B79518F0CC7800B1D25D /* CKQuadTree.m */; };
+		D018E6B1190634E2001501DE /* CKStoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = D018E6B0190634E2001501DE /* CKStoryView.m */; };
+		D018E6B219068CD4001501DE /* CKStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B201F618F5EA2A00CCC364 /* CKStoryViewController.m */; };
+		D0307BE6190626AF00F95CAF /* libpop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0307BDE1906266800F95CAF /* libpop.a */; };
 		D03DC49518FA6B6A00D7E680 /* CKBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03DC49418FA6B6A00D7E680 /* CKBrowserViewController.m */; };
 		D0962EAC18EE63A5002400AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0962EAB18EE63A5002400AA /* Foundation.framework */; };
 		D0962EAE18EE63A5002400AA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0962EAD18EE63A5002400AA /* CoreGraphics.framework */; };
 		D0962EB018EE63A5002400AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0962EAF18EE63A5002400AA /* UIKit.framework */; };
 		D0962EF318EF2507002400AA /* CKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0962EEA18EF2507002400AA /* CKAppDelegate.m */; };
 		D0962EF518EF2507002400AA /* CKStoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0962EEE18EF2507002400AA /* CKStoriesViewController.m */; };
-		D0962EF718EF2507002400AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0962EF218EF2507002400AA /* main.m */; };
+		D0962EF718EF2507002400AA /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = D0962EF218EF2507002400AA /* main.mm */; };
 		D0962EFC18EF254D002400AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0962EFA18EF254D002400AA /* Images.xcassets */; };
 		D0962F0118EF26A5002400AA /* CKShapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0962F0018EF26A5002400AA /* CKShapeView.m */; };
-		D0962F0418EF276B002400AA /* CKStoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0962F0318EF276B002400AA /* CKStoryView.m */; };
+		D0962F0418EF276B002400AA /* CKBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0962F0318EF276B002400AA /* CKBubbleView.m */; };
 		D0A7AF3418F0507B00B513CF /* CKForceLayoutAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A7AF3318F0507B00B513CF /* CKForceLayoutAnimator.m */; };
 		D0B201D718F5ABA800CCC364 /* amalloc.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B200E518F5A8D000CCC364 /* amalloc.c */; };
 		D0B201D818F5ABA800CCC364 /* basename.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B200E718F5A8D000CCC364 /* basename.c */; };
@@ -45,17 +48,49 @@
 		D0B201EF18F5ABA800CCC364 /* xmlpage.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B2014D18F5A8D000CCC364 /* xmlpage.c */; };
 		D0B201F018F5ABA800CCC364 /* version.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B201AF18F5AB2A00CCC364 /* version.c */; };
 		D0B201F118F5ABD400CCC364 /* libDiscount.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B201B518F5AB7B00CCC364 /* libDiscount.a */; };
-		D0B201F718F5EA2A00CCC364 /* CKStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B201F618F5EA2A00CCC364 /* CKStoryViewController.m */; };
 		D0B201FA18F5F9BA00CCC364 /* NSData+FILE.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B201F918F5F9BA00CCC364 /* NSData+FILE.m */; };
 		D0B201FD18F5FA8900CCC364 /* ConradWWDC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0B201FB18F5FA8900CCC364 /* ConradWWDC.xcdatamodeld */; };
 		D0B2020018F5FD0D00CCC364 /* CKStory.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B201FF18F5FD0D00CCC364 /* CKStory.m */; };
 		D0B2020218F6341300CCC364 /* Stories in Resources */ = {isa = PBXBuildFile; fileRef = D0B2020118F6341300CCC364 /* Stories */; };
-		D0B2020D18F6E0A800CCC364 /* CKStoryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B2020C18F6E0A800CCC364 /* CKStoryHeaderView.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D0307BDD1906266800F95CAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0307BD61906266800F95CAF /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC191218162FB53A00E0CC76;
+			remoteInfo = pop;
+		};
+		D0307BDF1906266800F95CAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0307BD61906266800F95CAF /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC68857F18C7B60000C6194C;
+			remoteInfo = "pop-osx";
+		};
+		D0307BE11906266800F95CAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0307BD61906266800F95CAF /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ECF01ED318C92B7F009E0AD1;
+			remoteInfo = "pop-tests";
+		};
+		D0307BE31906266800F95CAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0307BD61906266800F95CAF /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC7E319918C93D6500B38170;
+			remoteInfo = "pop-tests-osx";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D005B79418F0CC7800B1D25D /* CKQuadTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKQuadTree.h; sourceTree = "<group>"; };
 		D005B79518F0CC7800B1D25D /* CKQuadTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKQuadTree.m; sourceTree = "<group>"; };
+		D018E6AF190634E2001501DE /* CKStoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKStoryView.h; sourceTree = "<group>"; };
+		D018E6B0190634E2001501DE /* CKStoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKStoryView.m; sourceTree = "<group>"; };
+		D0307BD61906266800F95CAF /* pop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pop.xcodeproj; path = Classes/pop/pop.xcodeproj; sourceTree = "<group>"; };
 		D03DC49318FA6B6A00D7E680 /* CKBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKBrowserViewController.h; sourceTree = "<group>"; };
 		D03DC49418FA6B6A00D7E680 /* CKBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKBrowserViewController.m; sourceTree = "<group>"; };
 		D0962EA818EE63A5002400AA /* ConradWWDC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConradWWDC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,13 +102,13 @@
 		D0962EEA18EF2507002400AA /* CKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKAppDelegate.m; sourceTree = "<group>"; };
 		D0962EED18EF2507002400AA /* CKStoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKStoriesViewController.h; sourceTree = "<group>"; };
 		D0962EEE18EF2507002400AA /* CKStoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKStoriesViewController.m; sourceTree = "<group>"; };
-		D0962EF218EF2507002400AA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D0962EF218EF2507002400AA /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		D0962EFA18EF254D002400AA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D0962EFB18EF254D002400AA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0962EFF18EF26A5002400AA /* CKShapeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKShapeView.h; sourceTree = "<group>"; };
 		D0962F0018EF26A5002400AA /* CKShapeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKShapeView.m; sourceTree = "<group>"; };
-		D0962F0218EF276B002400AA /* CKStoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKStoryView.h; sourceTree = "<group>"; };
-		D0962F0318EF276B002400AA /* CKStoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKStoryView.m; sourceTree = "<group>"; };
+		D0962F0218EF276B002400AA /* CKBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKBubbleView.h; sourceTree = "<group>"; };
+		D0962F0318EF276B002400AA /* CKBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKBubbleView.m; sourceTree = "<group>"; };
 		D0A7AF3218F0507B00B513CF /* CKForceLayoutAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKForceLayoutAnimator.h; sourceTree = "<group>"; };
 		D0A7AF3318F0507B00B513CF /* CKForceLayoutAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKForceLayoutAnimator.m; sourceTree = "<group>"; };
 		D0B200E518F5A8D000CCC364 /* amalloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = amalloc.c; sourceTree = "<group>"; };
@@ -111,8 +146,6 @@
 		D0B201FE18F5FD0D00CCC364 /* CKStory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKStory.h; path = Classes/CKStory.h; sourceTree = SOURCE_ROOT; };
 		D0B201FF18F5FD0D00CCC364 /* CKStory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CKStory.m; path = Classes/CKStory.m; sourceTree = SOURCE_ROOT; };
 		D0B2020118F6341300CCC364 /* Stories */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Stories; sourceTree = "<group>"; };
-		D0B2020B18F6E0A800CCC364 /* CKStoryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKStoryHeaderView.h; sourceTree = "<group>"; };
-		D0B2020C18F6E0A800CCC364 /* CKStoryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKStoryHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0307BE6190626AF00F95CAF /* libpop.a in Frameworks */,
 				D0B201F118F5ABD400CCC364 /* libDiscount.a in Frameworks */,
 				D0962EAE18EE63A5002400AA /* CoreGraphics.framework in Frameworks */,
 				D0962EB018EE63A5002400AA /* UIKit.framework in Frameworks */,
@@ -137,6 +171,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D0307BD71906266800F95CAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0307BDE1906266800F95CAF /* libpop.a */,
+				D0307BE01906266800F95CAF /* pop.framework */,
+				D0307BE21906266800F95CAF /* pop-tests.octest */,
+				D0307BE41906266800F95CAF /* pop-tests-osx.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D0962E9F18EE63A5002400AA = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +204,7 @@
 		D0962EAA18EE63A5002400AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0307BD61906266800F95CAF /* pop.xcodeproj */,
 				D0B200E418F5A8D000CCC364 /* Discount */,
 				D0962EFE18EF26A5002400AA /* CKShapeView */,
 				D0962EAB18EE63A5002400AA /* Foundation.framework */,
@@ -176,23 +222,23 @@
 				D0962EEA18EF2507002400AA /* CKAppDelegate.m */,
 				D0B201FE18F5FD0D00CCC364 /* CKStory.h */,
 				D0B201FF18F5FD0D00CCC364 /* CKStory.m */,
+				D018E6AF190634E2001501DE /* CKStoryView.h */,
+				D018E6B0190634E2001501DE /* CKStoryView.m */,
+				D0962F0218EF276B002400AA /* CKBubbleView.h */,
+				D0962F0318EF276B002400AA /* CKBubbleView.m */,
 				D0962EED18EF2507002400AA /* CKStoriesViewController.h */,
 				D0962EEE18EF2507002400AA /* CKStoriesViewController.m */,
 				D0B201F518F5EA2A00CCC364 /* CKStoryViewController.h */,
 				D0B201F618F5EA2A00CCC364 /* CKStoryViewController.m */,
 				D03DC49318FA6B6A00D7E680 /* CKBrowserViewController.h */,
 				D03DC49418FA6B6A00D7E680 /* CKBrowserViewController.m */,
-				D0B2020B18F6E0A800CCC364 /* CKStoryHeaderView.h */,
-				D0B2020C18F6E0A800CCC364 /* CKStoryHeaderView.m */,
-				D0962F0218EF276B002400AA /* CKStoryView.h */,
-				D0962F0318EF276B002400AA /* CKStoryView.m */,
 				D0A7AF3218F0507B00B513CF /* CKForceLayoutAnimator.h */,
 				D0A7AF3318F0507B00B513CF /* CKForceLayoutAnimator.m */,
 				D005B79418F0CC7800B1D25D /* CKQuadTree.h */,
 				D005B79518F0CC7800B1D25D /* CKQuadTree.m */,
 				D0B201F818F5F9BA00CCC364 /* NSData+FILE.h */,
 				D0B201F918F5F9BA00CCC364 /* NSData+FILE.m */,
-				D0962EF218EF2507002400AA /* main.m */,
+				D0962EF218EF2507002400AA /* main.mm */,
 			);
 			path = Classes;
 			sourceTree = SOURCE_ROOT;
@@ -311,6 +357,12 @@
 			mainGroup = D0962E9F18EE63A5002400AA;
 			productRefGroup = D0962EA918EE63A5002400AA /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D0307BD71906266800F95CAF /* Products */;
+					ProjectRef = D0307BD61906266800F95CAF /* pop.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D0962EA718EE63A5002400AA /* ConradWWDC */,
@@ -318,6 +370,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D0307BDE1906266800F95CAF /* libpop.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libpop.a;
+			remoteRef = D0307BDD1906266800F95CAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D0307BE01906266800F95CAF /* pop.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = pop.framework;
+			remoteRef = D0307BDF1906266800F95CAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D0307BE21906266800F95CAF /* pop-tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "pop-tests.octest";
+			remoteRef = D0307BE11906266800F95CAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D0307BE41906266800F95CAF /* pop-tests-osx.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "pop-tests-osx.octest";
+			remoteRef = D0307BE31906266800F95CAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D0962EA618EE63A5002400AA /* Resources */ = {
@@ -369,14 +452,14 @@
 			files = (
 				D0962F0118EF26A5002400AA /* CKShapeView.m in Sources */,
 				D0B201FD18F5FA8900CCC364 /* ConradWWDC.xcdatamodeld in Sources */,
+				D018E6B1190634E2001501DE /* CKStoryView.m in Sources */,
 				D0A7AF3418F0507B00B513CF /* CKForceLayoutAnimator.m in Sources */,
 				D03DC49518FA6B6A00D7E680 /* CKBrowserViewController.m in Sources */,
 				D0962EF318EF2507002400AA /* CKAppDelegate.m in Sources */,
-				D0B201F718F5EA2A00CCC364 /* CKStoryViewController.m in Sources */,
-				D0B2020D18F6E0A800CCC364 /* CKStoryHeaderView.m in Sources */,
 				D0B201FA18F5F9BA00CCC364 /* NSData+FILE.m in Sources */,
-				D0962EF718EF2507002400AA /* main.m in Sources */,
-				D0962F0418EF276B002400AA /* CKStoryView.m in Sources */,
+				D018E6B219068CD4001501DE /* CKStoryViewController.m in Sources */,
+				D0962EF718EF2507002400AA /* main.mm in Sources */,
+				D0962F0418EF276B002400AA /* CKBubbleView.m in Sources */,
 				D0B2020018F5FD0D00CCC364 /* CKStory.m in Sources */,
 				D0962EF518EF2507002400AA /* CKStoriesViewController.m in Sources */,
 				D005B79618F0CC7800B1D25D /* CKQuadTree.m in Sources */,
@@ -422,7 +505,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -436,7 +519,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -461,7 +543,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -476,7 +558,6 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -500,6 +581,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/Classes/CKShapeView/CKShapeView",
 					"$(SRCROOT)/Classes/Discount",
+					"$(SRCROOT)/Classes/pop",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -519,6 +601,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/Classes/CKShapeView/CKShapeView",
 					"$(SRCROOT)/Classes/Discount",
+					"$(SRCROOT)/Classes/pop",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

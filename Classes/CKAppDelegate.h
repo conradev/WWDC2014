@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Kramer Software Productions, LLC. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 @interface CKAppDelegate : UIResponder <UIApplicationDelegate>
 
