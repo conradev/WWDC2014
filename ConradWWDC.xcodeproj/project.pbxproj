@@ -19,7 +19,6 @@
 		D0962EF518EF2507002400AA /* CKStoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0962EEE18EF2507002400AA /* CKStoriesViewController.m */; };
 		D0962EF718EF2507002400AA /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = D0962EF218EF2507002400AA /* main.mm */; };
 		D0962EFC18EF254D002400AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0962EFA18EF254D002400AA /* Images.xcassets */; };
-		D0962F0118EF26A5002400AA /* CKShapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0962F0018EF26A5002400AA /* CKShapeView.m */; };
 		D0962F0418EF276B002400AA /* CKBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0962F0318EF276B002400AA /* CKBubbleView.m */; };
 		D0A7AF3418F0507B00B513CF /* CKForceLayoutAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A7AF3318F0507B00B513CF /* CKForceLayoutAnimator.m */; };
 		D0B201D718F5ABA800CCC364 /* amalloc.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B200E518F5A8D000CCC364 /* amalloc.c */; };
@@ -48,10 +47,10 @@
 		D0B201EF18F5ABA800CCC364 /* xmlpage.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B2014D18F5A8D000CCC364 /* xmlpage.c */; };
 		D0B201F018F5ABA800CCC364 /* version.c in Sources */ = {isa = PBXBuildFile; fileRef = D0B201AF18F5AB2A00CCC364 /* version.c */; };
 		D0B201F118F5ABD400CCC364 /* libDiscount.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B201B518F5AB7B00CCC364 /* libDiscount.a */; };
-		D0B201FA18F5F9BA00CCC364 /* NSData+FILE.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B201F918F5F9BA00CCC364 /* NSData+FILE.m */; };
 		D0B201FD18F5FA8900CCC364 /* ConradWWDC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0B201FB18F5FA8900CCC364 /* ConradWWDC.xcdatamodeld */; };
 		D0B2020018F5FD0D00CCC364 /* CKStory.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B201FF18F5FD0D00CCC364 /* CKStory.m */; };
 		D0B2020218F6341300CCC364 /* Stories in Resources */ = {isa = PBXBuildFile; fileRef = D0B2020118F6341300CCC364 /* Stories */; };
+		D0C3F899191C264000758AA7 /* NSData+FILE.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C3F898191C264000758AA7 /* NSData+FILE.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,8 +104,6 @@
 		D0962EF218EF2507002400AA /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		D0962EFA18EF254D002400AA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D0962EFB18EF254D002400AA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D0962EFF18EF26A5002400AA /* CKShapeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKShapeView.h; sourceTree = "<group>"; };
-		D0962F0018EF26A5002400AA /* CKShapeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKShapeView.m; sourceTree = "<group>"; };
 		D0962F0218EF276B002400AA /* CKBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKBubbleView.h; sourceTree = "<group>"; };
 		D0962F0318EF276B002400AA /* CKBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKBubbleView.m; sourceTree = "<group>"; };
 		D0A7AF3218F0507B00B513CF /* CKForceLayoutAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKForceLayoutAnimator.h; sourceTree = "<group>"; };
@@ -140,12 +137,12 @@
 		D0B201F318F5E2A800CCC364 /* Discount.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Discount.xcconfig; path = Resources/Discount.xcconfig; sourceTree = SOURCE_ROOT; };
 		D0B201F518F5EA2A00CCC364 /* CKStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKStoryViewController.h; sourceTree = "<group>"; };
 		D0B201F618F5EA2A00CCC364 /* CKStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKStoryViewController.m; sourceTree = "<group>"; };
-		D0B201F818F5F9BA00CCC364 /* NSData+FILE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+FILE.h"; sourceTree = "<group>"; };
-		D0B201F918F5F9BA00CCC364 /* NSData+FILE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+FILE.m"; sourceTree = "<group>"; };
 		D0B201FC18F5FA8900CCC364 /* ConradWWDC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ConradWWDC.xcdatamodel; sourceTree = "<group>"; };
 		D0B201FE18F5FD0D00CCC364 /* CKStory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKStory.h; path = Classes/CKStory.h; sourceTree = SOURCE_ROOT; };
 		D0B201FF18F5FD0D00CCC364 /* CKStory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CKStory.m; path = Classes/CKStory.m; sourceTree = SOURCE_ROOT; };
 		D0B2020118F6341300CCC364 /* Stories */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Stories; sourceTree = "<group>"; };
+		D0C3F897191C264000758AA7 /* NSData+FILE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+FILE.h"; sourceTree = "<group>"; };
+		D0C3F898191C264000758AA7 /* NSData+FILE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+FILE.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,7 +203,7 @@
 			children = (
 				D0307BD61906266800F95CAF /* pop.xcodeproj */,
 				D0B200E418F5A8D000CCC364 /* Discount */,
-				D0962EFE18EF26A5002400AA /* CKShapeView */,
+				D0C3F896191C264000758AA7 /* NSData+FILE */,
 				D0962EAB18EE63A5002400AA /* Foundation.framework */,
 				D0962EAD18EE63A5002400AA /* CoreGraphics.framework */,
 				D0962EAF18EE63A5002400AA /* UIKit.framework */,
@@ -236,8 +233,6 @@
 				D0A7AF3318F0507B00B513CF /* CKForceLayoutAnimator.m */,
 				D005B79418F0CC7800B1D25D /* CKQuadTree.h */,
 				D005B79518F0CC7800B1D25D /* CKQuadTree.m */,
-				D0B201F818F5F9BA00CCC364 /* NSData+FILE.h */,
-				D0B201F918F5F9BA00CCC364 /* NSData+FILE.m */,
 				D0962EF218EF2507002400AA /* main.mm */,
 			);
 			path = Classes;
@@ -252,16 +247,6 @@
 				D0962EFA18EF254D002400AA /* Images.xcassets */,
 			);
 			path = Resources;
-			sourceTree = SOURCE_ROOT;
-		};
-		D0962EFE18EF26A5002400AA /* CKShapeView */ = {
-			isa = PBXGroup;
-			children = (
-				D0962EFF18EF26A5002400AA /* CKShapeView.h */,
-				D0962F0018EF26A5002400AA /* CKShapeView.m */,
-			);
-			name = CKShapeView;
-			path = Classes/CKShapeView/CKShapeView;
 			sourceTree = SOURCE_ROOT;
 		};
 		D0B200E418F5A8D000CCC364 /* Discount */ = {
@@ -297,6 +282,16 @@
 			name = Discount;
 			path = Classes/Discount;
 			sourceTree = SOURCE_ROOT;
+		};
+		D0C3F896191C264000758AA7 /* NSData+FILE */ = {
+			isa = PBXGroup;
+			children = (
+				D0C3F897191C264000758AA7 /* NSData+FILE.h */,
+				D0C3F898191C264000758AA7 /* NSData+FILE.m */,
+			);
+			name = "NSData+FILE";
+			path = "Classes/NSData+FILE/NSData+FILE";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -450,18 +445,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0962F0118EF26A5002400AA /* CKShapeView.m in Sources */,
 				D0B201FD18F5FA8900CCC364 /* ConradWWDC.xcdatamodeld in Sources */,
 				D018E6B1190634E2001501DE /* CKStoryView.m in Sources */,
 				D0A7AF3418F0507B00B513CF /* CKForceLayoutAnimator.m in Sources */,
 				D03DC49518FA6B6A00D7E680 /* CKBrowserViewController.m in Sources */,
 				D0962EF318EF2507002400AA /* CKAppDelegate.m in Sources */,
-				D0B201FA18F5F9BA00CCC364 /* NSData+FILE.m in Sources */,
 				D018E6B219068CD4001501DE /* CKStoryViewController.m in Sources */,
 				D0962EF718EF2507002400AA /* main.mm in Sources */,
 				D0962F0418EF276B002400AA /* CKBubbleView.m in Sources */,
 				D0B2020018F5FD0D00CCC364 /* CKStory.m in Sources */,
 				D0962EF518EF2507002400AA /* CKStoriesViewController.m in Sources */,
+				D0C3F899191C264000758AA7 /* NSData+FILE.m in Sources */,
 				D005B79618F0CC7800B1D25D /* CKQuadTree.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

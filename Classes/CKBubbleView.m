@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Kramer Software Productions, LLC. All rights reserved.
 //
 
-#import <CKShapeView.h>
-
 #import "CKBubbleView.h"
 
 #import "CKStory.h"
