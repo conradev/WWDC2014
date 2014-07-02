@@ -36,7 +36,6 @@ static NSString * const CKQuadtreeNodeChargeY = @"chargeY";
     self = [super init];
     if (self) {
         _referenceView = referenceView;
-        _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(tick)];
         _nodes = [NSMutableSet set];
         _links = [NSMutableSet set];
         _weights = [NSMapTable weakToStrongObjectsMapTable];
@@ -141,13 +140,18 @@ static NSString * const CKQuadtreeNodeChargeY = @"chargeY";
 
     _alpha = MAX(0.1f, _alpha);
     [_referenceView.layer insertSublayer:_linesLayer atIndex:0];
+
+    if (_displayLink == nil) {
+        _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(tick)];
+    }
     [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 - (void)stop {
     _alpha = 0.0f;
-    [_displayLink invalidate];
     [_linesLayer removeFromSuperlayer];
+    [_displayLink invalidate];
+    _displayLink = nil;
 }
 
 - (void)tick {
