@@ -20,6 +20,8 @@
 
 @implementation CKStoryViewController
 
+@dynamic view;
+
 #pragma mark - UIViewController
 
 - (void)loadView {
